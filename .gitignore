@@ -1,6 +1,6 @@
-node_modules/
-fitness.db
-instance/
+fitness_tracker_app/node_modules/
+fitness_tracker_app/fitness.db
+.ipynb_checkpoints/
 __pycache__/
 *.pyc
 .env
