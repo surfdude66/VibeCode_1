@@ -1,0 +1,16 @@
+CREATE TABLE IF NOT EXISTS activities (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    type TEXT NOT NULL,
+    duration INTEGER NOT NULL,
+    intensity TEXT NOT NULL,
+    notes TEXT,
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS wellness (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    energy_level INTEGER CHECK (energy_level BETWEEN 1 AND 10),
+    sleep_hours REAL,
+    mood_score INTEGER CHECK (mood_score BETWEEN 1 AND 10),
+    date DATE DEFAULT CURRENT_DATE
+);
