@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness - Fitness Tracker</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Wellness Pulse</h1>
+            <p>Track your physical activity and overall well-being</p>
+        </header>
+
+        <div class="dashboard-grid">
+            <!-- Analytics Section -->
+            <div class="card">
+                <h2>Weekly Progress</h2>
+                <div class="chart-container">
+                    <canvas id="wellnessChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Log Activity -->
+            <div class="card">
+                <h2>Log Activity</h2>
+                <form id="activityForm">
+                    <div class="form-group">
+                        <label>Activity Type</label>
+                        <select id="actType" required>
+                            <option value="Running">Running</option>
+                            <option value="Weights">Weights</option>
+                            <option value="Gym/Strength">Gym/Strength</option>
+                            <option value="Swimming">Swimming</option>
+                            <option value="Cycling">Cycling</option>
+                            <option value="Yoga">Yoga</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Duration (Minutes)</label>
+                        <input type="number" id="actDuration" placeholder="e.g. 45" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Intensity</label>
+                        <select id="actIntensity">
+                            <option value="Low">Low</option>
+                            <option value="Medium" selected>Medium</option>
+                            <option value="High">High</option>
+                            <option value="Max Effort">Max Effort</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Notes</label>
+                        <textarea id="actNotes" rows="2" placeholder="How did it feel?"></textarea>
+                    </div>
+                    <button type="submit">Log Workout</button>
+                </form>
+            </div>
+
+            <!-- Log Wellness -->
+            <div class="card">
+                <h2>Daily Wellness</h2>
+                <form id="wellnessForm">
+                    <div class="form-group">
+                        <label>Energy Level (1-10)</label>
+                        <input type="range" id="wellEnergy" min="1" max="10" value="7">
+                    </div>
+                    <div class="form-group">
+                        <label>Sleep Quality (Hours)</label>
+                        <input type="number" id="wellSleep" step="0.5" placeholder="e.g. 7.5" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mood Score (1-10)</label>
+                        <input type="range" id="wellMood" min="1" max="10" value="7">
+                    </div>
+                    <button type="submit" class="secondary">Save Daily Pulse</button>
+                </form>
+            </div>
+
+            <!-- Recent History -->
+            <div class="card">
+                <h2>Recent Workouts</h2>
+                <div id="activityList" class="list">
+                    <!-- Dynamic Content -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
